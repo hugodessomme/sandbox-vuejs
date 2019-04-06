@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vuejs Beginners</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{ count }}</h1>
+
+        <button @click="reduceCounter">-</button>
+        <button @click="addCounter">+</button>
+
+        <p v-if="count % 2 === 0">The current count is even</p>
+        <p v-else>The current count is odd</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods: {
+                reduceCounter: function() {
+                    this.count--
+                },
+                addCounter: function() {
+                    this.count++
+                }
+            }
+        })
+    </script>
+</body>
+</html>
