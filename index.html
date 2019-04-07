@@ -14,7 +14,7 @@
         <button @click="reduceCounter">-</button>
         <button @click="addCounter">+</button>
 
-        <p v-if="count % 2 === 0">The current count is even</p>
+        <p v-if="isEvenNumber">The current count is even</p>
         <p v-else>The current count is odd</p>
     </div>
 
@@ -26,11 +26,16 @@
                 count: 0
             },
             methods: {
-                reduceCounter: function() {
+                reduceCounter() {
                     this.count--
                 },
-                addCounter: function() {
+                addCounter() {
                     this.count++
+                }
+            },
+            computed: {
+                isEvenNumber() {
+                    return this.count % 2 === 0
                 }
             }
         })
