@@ -1,4 +1,4 @@
-import config from './config.local.js';
+import config from '../config.local.js';
 
 new Vue({
     el: '#app',
